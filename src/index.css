@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    @apply transition-colors duration-300 font-sans;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Custom scrollbar estilizada con los colores oficiales */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(7, 26, 17, 0.7);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(2, 145, 63, 0.5);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 204, 0, 0.8);
+  }
+}
+
+:root {
+  --primary: #02913F;     /* Verde Cooperativo Oficial */
+  --secondary: #FFCC00;   /* Amarillo Taxi Oficial */
+  --accent-red: #DA261D;  /* Rojo N° 5 del emblema */
+  --silver: #989899;      /* Aro metálico */
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Glassmorphism con tinte verde bosque y borde dorado sutil */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.dark .glass {
+  @apply bg-[#071A11]/60 backdrop-blur-md border border-[#FFCC00]/15;
+}
