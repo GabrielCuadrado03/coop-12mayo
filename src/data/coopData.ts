@@ -50,7 +50,7 @@ export const roles = [
   {
     id: '01',
     title: 'Nuestra Misión',
-    description: 'Prestar el servicio de transporte público en modalidad mixto con eficiencia y responsabilidad, mediante choferes profesionales en vehículos sedán y camionetas doble cabina. Brindamos un servicio seguro y oportuno a tarifa justa, promoviendo el desarrollo socioeconómico bajo principios de la Economía Popular y Solidaria.',
+    description: 'Prestar el servicio de taxi convencional con eficiencia y responsabilidad, mediante choferes profesionales en vehículos sedán y camionetas doble cabina. Brindamos un servicio seguro y oportuno a tarifa justa, promoviendo el desarrollo socioeconómico bajo principios de la Economía Popular y Solidaria.',
   },
   {
     id: '02',
@@ -103,6 +103,19 @@ export const skills = [
 
 // Directiva Oficial 2026 - 2027
 export const projects = [
+{
+    title: 'Ing. Sandra Acurio',
+    description: 'Gerente General · Representante Legal',
+    highlights: [
+      'Representación legal, judicial y extrajudicial de la Cooperativa "12 de Mayo".',
+      'Administración financiera, presupuesto anual y gestión operativa de la institución.',
+      'Impulso a la innovación tecnológica, implementación de la App La Doce y cumplimiento con la SEPS.'
+    ],
+    image: imgSandra,
+    moreImages: [],
+    tags: ['Gerencia General', 'Representación Legal'],
+    link: '#',
+  },
   {
     title: 'Sr. Danilo Aguaguiña',
     description: 'Presidente · Consejo de Administración',
@@ -140,19 +153,6 @@ export const projects = [
     image: imgAlison,
     moreImages: [],
     tags: ['Consejo de Administración', 'Secretaría'],
-    link: '#',
-  },
-  {
-    title: 'Ing. Sandra Acurio',
-    description: 'Gerente General · Representante Legal',
-    highlights: [
-      'Representación legal, judicial y extrajudicial de la Cooperativa "12 de Mayo".',
-      'Administración financiera, presupuesto anual y gestión operativa de la institución.',
-      'Impulso a la innovación tecnológica, implementación de la App La Doce y cumplimiento con la SEPS.'
-    ],
-    image: imgSandra,
-    moreImages: [],
-    tags: ['Gerencia General', 'Representación Legal'],
     link: '#',
   },
   {
