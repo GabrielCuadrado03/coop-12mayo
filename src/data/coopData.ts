@@ -55,7 +55,7 @@ export const roles = [
   {
     id: '02',
     title: 'Nuestra Visión',
-    description: 'Ser la cooperativa de transporte mixto líder y referente en Puyo y la provincia de Pastaza, reconocida por la eficiencia, responsabilidad y profesionalismo de nuestros choferes, unidades modernas en óptimas condiciones y el bienestar integral de nuestros socios y sus familias.',
+    description: 'Ser la cooperativa de transporte de taxis convencionales líder y referente en Puyo y la provincia de Pastaza, reconocida por la eficiencia, responsabilidad y profesionalismo de nuestros choferes, unidades modernas en óptimas condiciones y el bienestar integral de nuestros socios y sus familias.',
   },
   {
     id: '03',
