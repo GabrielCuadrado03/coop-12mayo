@@ -5,9 +5,11 @@ import {
   Layers,
   Search,
   CheckCircle2,
-  ArrowLeft
+  ArrowLeft,
+  Flame,
+  Zap
 } from 'lucide-react';
-import { useSocketDispatch } from '@/hooks/useSocketDispatch';
+import { useFirebaseDispatch } from '@/hooks/useFirebaseDispatch';
 import {
   DispatchHeader as Header,
   RideCard,
@@ -18,6 +20,7 @@ import {
 
 export function DispatchPage() {
   const {
+    isFirebase,
     socketStatus,
     reconnectAttempts,
     carreras,
@@ -27,8 +30,9 @@ export function DispatchPage() {
     completarCarrera,
     cancelarCarrera,
     crearCarreraManual,
+    simularCarreraWhatsApp,
     cambiarEstadoUnidad
-  } = useSocketDispatch();
+  } = useFirebaseDispatch();
 
   const [activeTab, setActiveTab] = useState<'PENDIENTES' | 'EN_CURSO' | 'TODAS'>('PENDIENTES');
   const [filtroTexto, setFiltroTexto] = useState('');
@@ -77,9 +81,30 @@ export function DispatchPage() {
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Volver al Sitio Institucional</span>
         </a>
-        <div className="flex items-center gap-2 text-slate-400">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Cooperativa 12 De Mayo • Despacho Operativo</span>
+        <div className="flex items-center gap-3">
+          {/* Indicador de estado de Firebase vs Demo */}
+          {isFirebase ? (
+            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-bold bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Firebase Firestore En Vivo</span>
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 text-amber-300 font-bold bg-amber-950/60 px-2.5 py-0.5 rounded-full border border-amber-500/30">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              <span>Modo Demostración / Esperando Claves en .env</span>
+            </span>
+          )}
+
+          {/* Botón rápido para simular carrera WhatsApp */}
+          <button
+            type="button"
+            onClick={simularCarreraWhatsApp}
+            className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-[11px] shadow transition-all cursor-pointer active:scale-95"
+            title="Simula la llegada de un cliente por WhatsApp para probar el despacho y sonido"
+          >
+            <Zap className="w-3 h-3 fill-current" />
+            <span>Simular Pedido WhatsApp</span>
+          </button>
         </div>
       </div>
 
